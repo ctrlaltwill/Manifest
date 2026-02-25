@@ -1,210 +1,77 @@
-<div align="center">
+# Manifest (Fork)
 
-![](img/hero.png)
+Personal fork of the original Manifest/Baseline Obsidian theme, maintained for custom UI refinements.
 
-### The baseline of your thoughts.
+## Purpose of this fork
 
-_From the creator of [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino)_
+This repository is focused on a stable, opinionated visual variant of the original theme.
 
-[![](https://img.shields.io/badge/Made%20in-Taiwan-blue?style=for-the-badge)](https://wikipedia.org/wiki/Taiwan)
-[![](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-green?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/sevenaxis)
-[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](https://aaaaalexis.github.io/obsidian-baseline/install?name=Baseline)
+- Keep behavior and features intact
+- Preserve compatibility with upstream theme structure
+- Maintain a single canonical CSS output for personal use
 
-</div>
+## Source of truth
 
-## Quick Start
+The guiding stylesheet for this fork is:
 
-### Migrating from another theme?
+- `src/theme.scss` (contains full canonical CSS text)
 
-Seamlessly migrate your existing Style Settings from supported themes.
+Build output is written to:
 
-**Carry your settings over with [Style Settings Migration Tool ↗](https://aaaaalexis.github.io/obsidian-baseline/migration)**
+- `theme.css`
 
-### Looking for inspiration?
+In this fork, the build process intentionally performs a direct copy from `src/theme.scss` to `theme.css` to avoid parser-driven transformations and preserve exact styling.
 
-Discover and share Style Settings presets in Baseline Marketplace.
+## Build docs
 
-**Explore community-made presets in [Baseline Marketplace ↗](https://aaaaalexis.github.io/obsidian-baseline/marketplace)**
+### Requirements
 
-## Overview
+- Node.js 18+ (recommended)
+- npm
 
-### Sleek by default. Yours by design.
+### Install
 
-**Beautiful starting point.** Clean layout, organized interface, and subtle animations make Baseline feel effortless from the first install.
+```bash
+npm install
+```
 
-![](img/elements.png)
+### Build
 
-**Make it yours.** With deep [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) integration, every detail is yours to shape. Colors, spacing, typography, and beyond.
+```bash
+npm run build
+```
 
-![](img/colors.png)
+This updates `theme.css` from `src/theme.scss` with no style/functionality changes.
 
-**Built for mobile.** Enhanced navigation, refined menus, and comfortable spacing bring the same quality experience to every screen.
+## Visual changes in this fork
 
-![](img/mobile.png)
+Primary visual differences from upstream are concentrated in:
 
-## Philosophy
+- **Typography**
+  - Font sizing/weight/spacing refinements for better readability and hierarchy
+- **Button styling**
+  - More consistent corner radii, hover fills, and interaction states
+- **Navigation layout**
+  - Sidebar/tab layout refinements for spacing, active-state clarity, and alignment
+- **Image styling**
+  - Visual adjustments around image presentation to better match the fork’s design language
 
-### Less _and_ more.
+## Repository structure (relevant files)
 
-Baseline is built on a simple belief: a great theme should work beautifully without touching a single setting, and transform completely when you're ready to explore.
+- `src/theme.scss` — canonical style source used by this fork
+- `theme.css` — distributed Obsidian theme stylesheet
+- `manifest.json` — Obsidian theme metadata
+- `snippets/` — optional CSS snippets
 
-- **Refined foundation**
+## Updating from upstream
 
-  Clean, modern, and polished from day one. Baseline sets a standard your vault can grow from.
+When syncing upstream changes:
 
-- **Thoughtful customization**
-
-  Every option is designed with care. So no matter how far you go, Baseline always looks intentional.
-
-- **More than a theme**
-
-  Hover sidebars, compact elements, polished interface... Baseline takes the best ideas from the community and gives them a home. More than a theme, this is a new starting point for everyone to built upon.
-
-## Features
-
-Baseline supports all filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
-
-### Banner
-
-| Class                   | Description                                                                                 |
-| :---------------------- | :------------------------------------------------------------------------------------------ |
-| `banner`                | Add at the end of the image link, e.g. `![[image.jpeg\|banner]]`                            |
-| `banner-fade`           | Add faded edge to the banner (requires `banner`)                                            |
-| `banner-icon`           | Add an emoji or letter as note icon using callout, e.g. `> [!banner-icon] 👋`               |
-| `banner-title`          | Moves inline title next to the icon (requires `banner-icon`)                                |
-| `y0`, `y5`... to `y100` | Adjust the vertical position of the banner (requires `banner`), from 0 to 100 in steps of 5 |
-
-### [Block width](https://minimal.guide/features/block-width)
-
-| Class                                  | Description                           |
-| :------------------------------------- | :------------------------------------ |
-| `wide`                                 | Entire note uses wide line width      |
-| `max`                                  | Entire note uses max line width       |
-| `table-100`, `bases-100`, `img-100`    | Fill 100% of the pane width           |
-| `table-max`, `bases-max`, `img-max`    | Fill the max line width (default 90%) |
-| `table-wide`, `bases-wide`, `img-wide` | Fill the wide line width              |
-
-### [Cards](https://minimal.guide/Block+types/Cards)
-
-| Class                 | Description                                      |
-| :-------------------- | :----------------------------------------------- |
-| `cards` (required)    | Set all Dataview tables to card layout           |
-| `list-cards`          | Set all bullet lists to card layout              |
-| `cards-align-bottom`  | Align the last element of a card to the bottom   |
-| `cards-cover`         | Images are resized to fill the defined space     |
-| `cards-16-9`          | Fit images in cards to 16:9 ratio                |
-| `cards-1-1`           | Fit images in cards to 1:1 ratio (square)        |
-| `cards-2-1`           | Fit images in cards to 2:1 ratio                 |
-| `cards-2-3`           | Fit images in cards to 2:3 ratio                 |
-| `cards-cols-1` to `8` | Force a specific number of columns (from 1 to 8) |
-
-### Embeds
-
-| Class              | Description              |
-| :----------------- | :----------------------- |
-| `embed-strict`     | Remove embed background  |
-| `embed-hide-title` | Hide embedded file title |
-
-### [Image filters](https://minimal.guide/images#Image+filters)
-
-Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
-
-| Filter       | Description                                                                        |
-| :----------- | :--------------------------------------------------------------------------------- |
-| `#blend`     | Blend image into background                                                        |
-| `#invert`    | Invert images in dark mode — ideal for charts and handwriting on light backgrounds |
-| `#invertW`   | Invert images in light mode — ideal for charts and handwriting on dark backgrounds |
-| `#circle`    | Crop image to a circle                                                             |
-| `#outline`   | Add outline around image                                                           |
-| `#interface` | Add drop shadow behind image                                                       |
-
-### [Image grids](https://minimal.guide/Block+types/Image+grids)
-
-| Class      | Description          |
-| :--------- | :------------------- |
-| `img-grid` | Activate image grids |
-
-### [Tables](https://minimal.guide/tables)
-
-| Class           | Description                                                    |
-| :-------------- | :------------------------------------------------------------- |
-| `table-nowrap`  | Disable line wrapping in table cells                           |
-| `table-wrap`    | Force line wrapping in table cells                             |
-| `table-center`  | Center small tables narrower than line width                   |
-| `table-numbers` | Add row numbers to tables                                      |
-| `table-tabular` | Use tabular figures in tables                                  |
-| `table-small`   | Use small font size in tables                                  |
-| `table-tiny`    | Use tiny font size in tables                                   |
-| `table-lines`   | Add borders around all table cells                             |
-| `row-lines`     | Add borders between table rows                                 |
-| `col-lines`     | Add borders between table columns                              |
-| `row-alt`       | Add striped background to alternating table rows               |
-| `col-alt`       | Add striped background to alternating table columns            |
-| `row-hover`     | Highlight rows on hover                                        |
-| `bases-row-alt` | Add striped background to alternating Bases table view rows    |
-| `bases-col-alt` | Add striped background to alternating Bases table view columns |
-
-### [Alternate checkboxes](https://github.com/damiankorcz/Alternative-Checkboxes-Reference-Set)
-
-![](img/checkbox.png)
-
-| Syntax  | Description |
-| ------- | ----------- |
-| `- [ ]` | To-do       |
-| `- [/]` | Incomplete  |
-| `- [x]` | Done        |
-| `- [-]` | Canceled    |
-| `- [>]` | Forwarded   |
-| `- [<]` | Scheduling  |
-| `- [?]` | Question    |
-| `- [!]` | Important   |
-| `- [*]` | Star        |
-| `- ["]` | Quote       |
-| `- [l]` | Location    |
-| `- [b]` | Bookmark    |
-| `- [i]` | Information |
-| `- [S]` | Savings     |
-| `- [I]` | Idea        |
-| `- [p]` | Pros        |
-| `- [c]` | Cons        |
-| `- [f]` | Fire        |
-| `- [k]` | Key         |
-| `- [w]` | Win         |
-| `- [u]` | Up          |
-| `- [d]` | Down        |
-| `- [+]` | Add         |
-| `- [B]` | Brainstorm  |
-| `- [a]` | Alarm       |
-| `- [n]` | Note        |
-| `- [R]` | Review      |
-| `- [t]` | Time        |
-| `- [P]` | Phone       |
-| `- [L]` | Love        |
-
-## Credits
-
-- **[Craft Docs](https://www.craft.do/)** - Interface design inspiration
-- **[Huang Chung Yu](https://commons.wikimedia.org/wiki/File:Yushan_main_east_peak%2BHuang_Chung_Yu%E9%BB%83%E4%B8%AD%E4%BD%91%2B9030.png)** - Yushan background
-- **[Minimal by kepano](https://github.com/kepano/obsidian-minimal)** ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, image filters, table helper classes
-
-### Community Themes
-
-- [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, color schemes, image filters, table helper classes
-- [**AnuPpuccin** by AnubisNekhet](https://github.com/AnubisNekhet/AnuPpuccin/) ([Donate](https://buymeacoffee.com/anubisnekhet)) - Catppuccin color schemes
-- [**Sanctum** by jdanielmourao](https://github.com/jdanielmourao/obsidian-sanctum) ([Donate](https://ko-fi.com/jdanielmourao)) - Sanctum color scheme
-- [**Tiniri** by vladstudio](https://github.com/vladstudio/tiniri-obsidian/) ([Donate](https://vlad.studio/signup)) - Tiniri color scheme
-- [**Border** by Akifyss](https://github.com/Akifyss/obsidian-border) - Border workspace
-- [**Iridium** by kyffa](https://github.com/kyffa/Iridium) - Frame workspace
-
-### Extras
-
-- [**Chill Jinshu Song** by Warren2060](https://github.com/Warren2060/ChillJinshuSong) - Heading font for extended language support
-- [**Obsidian Baseline Theme Customization** by bwya77](https://github.com/bwya77/obsidian-baseline-customization) - Admin color scheme, Block properties style
-
-### Inspiration
-
-- [**Craft Docs**](https://www.craft.do/) - Cupertino workspace, Fusion workspace
+1. Merge/rebase upstream changes into this fork.
+2. Re-apply any intentional customizations in `src/theme.scss`.
+3. Run `npm run build`.
+4. Validate visual parity in Obsidian.
 
 ## License
 
-Baseline is licensed under the [MIT license](LICENSE).
+This fork follows the original project license: see `LICENSE.txt`.

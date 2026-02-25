@@ -1,0 +1,8 @@
+{
+  "name": "manifest-theme",
+  "private": true,
+  "scripts": {
+    "build": "cp src/theme.scss theme.css",
+    "watch": "npm run build"
+  }
+}
