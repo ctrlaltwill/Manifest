@@ -13,10 +13,10 @@ A personal fork of the [Baseline](https://github.com/aaaaalexis/obsidian-baselin
 
 ## Installation
 
-### Option 1 — Copy from dist
+### Option 1 — Download a release _(Recommended)_
 
-1. Download `theme.css` and `manifest.json` from the [`dist/`](dist/) folder
-2. Place both files in your vault at:
+1. Go to [Releases](https://github.com/ctrlaltwill/Manifest/releases) and download the latest release
+2. Place `theme.css` and `manifest.json` in your vault at:
    ```
    <Your Vault>/.obsidian/themes/Manifest/
    ```
