@@ -2,7 +2,7 @@
   "name": "manifest-theme",
   "private": true,
   "scripts": {
-    "build": "cp src/theme.scss theme.css",
+    "build": "cp src/theme.scss theme.css && mkdir -p dist && cp theme.css dist/theme.css && cp manifest.json dist/manifest.json",
     "build:local": "npm run build && cp manifest.json '/Users/williamguy/Library/Mobile Documents/iCloud~md~obsidian/Documents/Medicine Vault/.obsidian/themes/Manifest/manifest.json' && cp theme.css '/Users/williamguy/Library/Mobile Documents/iCloud~md~obsidian/Documents/Medicine Vault/.obsidian/themes/Manifest/theme.css' && echo 'Synced local vault: Manifest theme'",
     "watch": "npm run build"
   }
