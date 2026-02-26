@@ -1,16 +1,11 @@
 # Manifest
 
-A personal fork of the [Baseline](https://github.com/aaaaalexis/obsidian-baseline) theme by [aaaaalexis](https://github.com/aaaaalexis), tweaked for typography, navigation, and image presentation.
+A personal fork of the [Baseline](https://github.com/aaaaalexis/obsidian-baseline) theme by [aaaaalexis](https://github.com/aaaaalexis).
 
-## Key features
+Changes are subtle and include refined typography, buttons, and layout styling. 
 
-- System font stack applied consistently across headings on desktop and mobile
-- Active file indicator — 6px bullet to the left of the filename in the file explorer
-- Folder notes keep their chevron, no bullet added
-- Captioned image support via the [Image Captions](https://github.com/alangrainger/obsidian-image-captions) plugin
-- Heading size and weight refinements for h1–h5
-- Minor spacing and border-radius tweaks to nav items and buttons
-
+This theme also has support for captioned images when using the [Image Captions](https://github.com/alangrainger/obsidian-image-captions) plugin.
+  
 ## Installation
 
 ### Option 1 — Download the latest release
