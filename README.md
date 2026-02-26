@@ -13,7 +13,7 @@ A personal fork of the [Baseline](https://github.com/aaaaalexis/obsidian-baselin
 
 ## Installation
 
-### Option 1 — Download a release _(Recommended)_
+### Option 1 — Download the latest release
 
 1. Go to [Releases](https://github.com/ctrlaltwill/Manifest/releases) and download the latest release
 2. Place `theme.css` and `manifest.json` in your vault at:
