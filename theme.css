@@ -1566,8 +1566,13 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-le
 }
 
 .workspace-tab-header.tappable:hover {
-background: var(--nav-item-background-active);
+background: transparent !important;
 }
+
+.workspace-tab-header.mod-active:hover {
+background: var(--tab-background-active) !important;
+}
+
 
 .workspace-tab-header-inner {
     background: transparent;
@@ -11205,12 +11210,17 @@ body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container>di
 }
 body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container>div .tree-item-self.is-active::before {
     position: absolute;
-    margin-left: -12px;
-    border-radius: var(--button-radius);
-    background-color: var(--nav-item-color-active);
-    width: 6px;
-    height: 6px;
+    left: 10px;
+    margin-left: 0;
+    border: 1.5px solid var(--nav-item-color-active);
+    border-radius: 100vh;
+    background: radial-gradient(circle, var(--nav-item-color-active) 0 2px, transparent 2.5px);
+    width: 10px;
+    height: 10px;
     content: ""}
+body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container>div .tree-item-self.is-active:hover {
+    background-color: var(--nav-item-background-active) !important;
+}
 body.nav-item-baseline.input-fluent .nav-files-container>div {
     --nav-item-background-active:  var(--background-modifier-hover);
     --nav-item-color-active:  var(--nav-item-color);
